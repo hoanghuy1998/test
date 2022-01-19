@@ -1,0 +1,53 @@
+ <Row>
+            <Col xs={12} md={4}>
+              <label className="text-capitalize cl-primary">city</label>
+              <select
+                onChange={handlechangeCity}
+                className=" w-100  form-select form-select-lg mb-3"
+                aria-label=".form-select-sm example"
+              >
+                {city?.map((c) => (
+                  <option
+                    selected={dataUser.city === c.codename}
+                    value={c.codename}
+                  >
+                    {c.name}
+                  </option>
+                ))}
+              </select>
+            </Col>
+            <Col xs={12} md={4}>
+              <label className="text-capitalize cl-primary">dictrict</label>
+              <select
+                onChange={handlechangeDistrict}
+                className=" w-100  form-select form-select-lg mb-3"
+                aria-label=".form-select-sm example"
+              >
+                {district?.map((c) => (
+                  <option
+                    selected={dataUser.district === c.codename}
+                    value={c.code}
+                  >
+                    {c.name}
+                  </option>
+                ))}
+              </select>
+            </Col>
+            <Col xs={12} md={4}>
+              <label className="text-capitalize cl-primary">ward</label>
+              <select
+                onChange={handlechangeWard}
+                className=" w-100  form-select form-select-lg mb-3"
+                aria-label=".form-select-sm example"
+              >
+                {ward?.map((c) => (
+                  <option
+                    selected={dataUser.ward === c.codename}
+                    value={c.codename}
+                  >
+                    {c.name}
+                  </option>
+                ))}
+              </select>
+            </Col>
+          </Row>
