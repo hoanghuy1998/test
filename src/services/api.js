@@ -1,7 +1,7 @@
 import axios from "axios";
 const url = {
-  // baseUrl: "https://hoanghuy1998.herokuapp.com",
-  baseUrl: "http://localhost:5000",
+  baseUrl: "https://hoanghuy1998.herokuapp.com",
+  //baseUrl: "http://localhost:5000",
   productSoled: "/productSolded",
   detailsQuery: "/detailsQuery",
   products: "/allproduct",
