@@ -104,7 +104,7 @@ const EditProduct = () => {
         console.log(res);
         if (res.errorCode === 0) {
           isSave();
-          toast.success(`Đã Thêm ${dataUpdate.name} Thành Công`);
+          toast.success(`Đã Thêm ${dataUpdate.name } Thành Công`);
           dispatch({
             type: ActionTypes.SAVE,
           });
@@ -112,7 +112,9 @@ const EditProduct = () => {
       });
     } else {
       if (JSON.stringify(dataUpdate) !== "{}") {
-        productService.update(dataUpdate).then((res) => {
+        console.log(dataUpdate)
+        productService.update(dataUpdate, data.id).then((res) => {
+          console.log(res);
           if (res.errorCode === 0) {
             toast.success(`Đã Cập Nhật ${res.data.name} Thành Công`);
             isSave();
@@ -128,15 +130,6 @@ const EditProduct = () => {
         toast.info("không có gì thay đổi");
       }
     }
-    // console.log("dataUpdate", dataUpdate);
-    // productService.update(dataUpdate, data.id).then((res) => {
-    //   if (res.errorCode === 0) {
-    //     toast.success(`Đã Cập Nhật ${res.data.name} Thành Công`);
-    //     dispatch({
-    //       type: ActionTypes.SAVE,
-    //     });
-    //   } else toast.warning("cập nhật thất bại");
-    // });
   };
   useEffect(() => {
     frm.setValues(data);

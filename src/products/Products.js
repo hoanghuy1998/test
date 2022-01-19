@@ -77,6 +77,7 @@ const Products = () => {
   };
   useEffect(() => {
     loadData();
+    console.log('uef')
   }, [page, perPage, save]);
 
   const handleChangeSearch = (e) => {
